@@ -157,7 +157,7 @@ START_TEST(test_2d_area)
 	b.y = 30;
 	c.x = 35;
 	c.y = 15;
-	double test_answer = coord_2d_area_triangle(a, b, c);
+	double test_answer = coord_2d_area_triangle(&a, &b, &c);
 	ck_assert_double_eq(answer,test_answer);
 }
 END_TEST
