@@ -150,15 +150,22 @@ START_TEST(test_2d_area)
 	coord_2d_t a;
 	coord_2d_t b;
 	coord_2d_t c;
-	double answer = 150;
-	a.x = 15;
-	a.y = 15;
-	b.x = 23;
-	b.y = 30;
-	c.x = 35;
-	c.y = 15;
+	double answer = 150.0;
+	a.x = 15.0;
+	a.y = 15.0;
+	b.x = 23.0;
+	b.y = 30.0;
+	c.x = 35.0;
+	c.y = 15.0;
 	double test_answer = coord_2d_area_triangle(&a, &b, &c);
-	ck_assert_double_eq(answer,test_answer);
+	bool value;
+	if (test_answer==answer){
+		value = true;
+	}
+	else{
+		value = false;
+	}
+	ck_assert(value);
 }
 END_TEST
 
